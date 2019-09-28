@@ -1,0 +1,17 @@
+:global {
+  html {
+    box-sizing: border-box;
+  }
+  *, :after, :before {
+    box-sizing: inherit;
+  }
+  html,
+  body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
