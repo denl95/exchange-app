@@ -1,0 +1,21 @@
+.header {
+  color: white;
+  background: #1d3f67;
+  font-size: 18px;
+}
+.textField {
+  :global {
+    .MuiInputBase-root {
+      color: white;
+    }
+    .MuiTypography-colorTextSecondary {
+      color: white;
+    }
+    .MuiSelect-icon {
+      color: white;
+    }
+    .MuiInput-underline:before {
+      border-bottom: 1px solid white;
+    }
+  }
+}

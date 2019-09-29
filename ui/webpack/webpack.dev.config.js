@@ -1,6 +1,7 @@
 /* global require*/
 const config = require('./webpack.common.config');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 config.entry.app = [
   'react-hot-loader/patch',
@@ -15,13 +16,6 @@ config.devServer = {
   historyApiFallback: true,
   stats: 'minimal',
   hotOnly: true,
-  proxy: {
-    '/api/**': {
-      target: 'https://alert-system-dot-sensor-platform.appspot.com',
-      logLevel: 'debug',
-      changeOrigin: true,
-    },
-  }
 };
 
 config.devtool = 'source-map';
@@ -48,5 +42,14 @@ config.module.rules = config.module.rules.concat([
 config.resolve.alias = {
   'react-dom': '@hot-loader/react-dom',
 };
+
+config.plugins = config.plugins.concat([
+  new HtmlWebpackPlugin({
+    inject: false,
+    template: require('html-webpack-template'),
+    title: 'Exchange app',
+    appMountId: 'root'
+  }),
+]);
 
 module.exports = config;

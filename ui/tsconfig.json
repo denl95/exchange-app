@@ -16,7 +16,8 @@
     ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "pretty": true
+    "pretty": true,
+    "experimentalDecorators": true
   },
   "include": [
     "./types/**/*",
